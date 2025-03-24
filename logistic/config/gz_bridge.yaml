@@ -1,0 +1,84 @@
+# gz topic published by the simulator core
+- ros_topic_name: "clock"
+  gz_topic_name: "/world/world_demo/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
+# gz topic published by JointState plugin
+# - ros_topic_name: "joint_states"
+#   gz_topic_name: "joint_states"
+#   ros_type_name: "sensor_msgs/msg/JointState"
+#   gz_type_name: "gz.msgs.Model"
+#   direction: GZ_TO_ROS
+
+# gz topic published by DiffDrive plugin
+- ros_topic_name: "/model/tugbot/odometry"
+  gz_topic_name: "/model/tugbot/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
+
+# gz pose published by DiffDrive plugin
+- ros_topic_name: "pose"
+  gz_topic_name: "/model/tugbot/pose"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+
+# # gz topic published by DiffDrive plugin
+# - ros_topic_name: "odom"
+#   gz_topic_name: "odom"
+#   ros_type_name: "nav_msgs/msg/Odometry"
+#   gz_type_name: "gz.msgs.Odometry"
+#   direction: GZ_TO_ROS
+
+# gz topic published by DiffDrive plugin
+- ros_topic_name: "tf"
+  gz_topic_name: "/model/tugbot/tf"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+
+# gz topic subscribed to by DiffDrive plugin
+- ros_topic_name: "/model/tugbot/cmd_vel"
+  gz_topic_name: "/model/tugbot/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/model/tugbot/cmd_vel"
+  gz_topic_name: "/model/tugbot/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: GZ_TO_ROS
+
+# gz topic published by IMU plugin
+- ros_topic_name: "imu"
+  gz_topic_name: "/world/world_demo/model/tugbot/link/imu_link/sensor/imu/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin
+- ros_topic_name: "scan"
+  gz_topic_name: "/world/world_demo/model/tugbot/link/scan_omni/sensor/scan_omni/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Camera)
+# - ros_topic_name: "camera/camera_info"
+#   gz_topic_name: "camera/camera_info"
+#   ros_type_name: "sensor_msgs/msg/CameraInfo"
+#   gz_type_name: "gz.msgs.CameraInfo"
+#   direction: GZ_TO_ROS
+
+# Existing entries remain unchanged
+# Add this new entry for DummySensor
+- ros_topic_name: "/dummy_sensor_output"
+  gz_topic_name: "/dummy_sensor/output"
+  ros_type_name: "std_msgs/msg/String"
+  gz_type_name: "gz.msgs.StringMsg"
+  direction: GZ_TO_ROS
+
