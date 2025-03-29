@@ -1,6 +1,6 @@
 # Intralogistic-robot-simulation Installation Guide
 
-This document provides the commands and file structure to install and run the `logistic` ROS 2 package with the `DummySensor` plugin for Gazebo Harmonic.
+This document provides the commands and file structure to install and run the `logistic` ROS 2 package and working of the `DummySensor` plugin for Gazebo Harmonic.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ logistic/
 ```
 
 ## Prerequisites 
-- Should have ROS2 Jazzy installed. You can refer [here](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) for the setup. Follow the same steps.
+- Should have ROS2 Jazzy installed. You can refer [here](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) for the setup. Follow the exact same steps.
 - Source install gazebo Harmonic. This way if you encounter any issue you can just delete the workspace and do clean install again. You can refer [here](https://gazebosim.org/docs/harmonic/install_ubuntu_src/) for the setup.
 
 
@@ -56,7 +56,7 @@ colcon build
 ## Run Simulation
 
 ```bash
-
+#Task1 : simulation setup
 
 # Source the Workspace
 source ~/work_ws/install/setup.bash
@@ -67,17 +67,30 @@ export GZ_SIM_SYSTEM_PLUGIN_PATH=$GZ_SIM_SYSTEM_PLUGIN_PATH:~/work_ws/install/lo
 # Run the Simulation
 ros2 launch logistic world_launch.py
 
-```
+```     
+
 
 ## Execute DummySensor Plugin
 
 ```bash
+#Task2 : creating DummySensor Plugin
+
 # After launching the world, open another terminal
 ros2 topic echo /dummy_sensor_output
 ```
+</br > 
 
-Result would be something like this.
+
+## Result
+  
 ![img4](https://github.com/user-attachments/assets/a156856d-e50b-48a7-9016-60f97bbe0517)
+
+
+</br > 
+
+
+(Note - once you start the simulation, echo the sensor output topic on another terminal and then start/resume the simulator )
+
 
 
 
